@@ -1,0 +1,38 @@
+{%  extends "base.html" %}
+
+{% block head %}
+<title>post</title>
+    {% endblock %}
+<hr>
+
+{% block body %} 
+<hr>
+<div>
+<h1 style="display: inline">Blog post</h1>
+<a  style="display: inline" class="btn btn-success" href="/post/newpost">+ NEW POST</a>
+</div>
+
+{% for post in posts %}
+
+
+
+
+<h2>{{ post.title }}</h2>
+{% if post.author %}
+<small>by {{post.author}} on the {{post.date}}</small>
+{% else %}
+<small>by Unknown on the {{post.date}}</small>
+{% endif %}
+<br>
+<br>
+<p style="white-space:pre-wrap" >{{ post.content }}</p>
+
+
+
+<hr>
+{% endfor %}
+</div>
+{% endblock %}
+
+
+

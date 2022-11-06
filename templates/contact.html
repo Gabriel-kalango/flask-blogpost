@@ -1,0 +1,26 @@
+{%  extends "base.html" %}
+
+{% block head %}
+<title>edit</title>
+    {% endblock %}
+<hr>
+
+{% block body %} 
+<hr>
+<form action="#" method="POST">
+    <label for="name">name: </label>
+    <input type="textl" class="form-control" id="name" name="name" aria-describedby="Enter name" placeholder="Enter name">
+    
+    <br>
+    
+    <label for="email">Email: </label>
+    <input type="email" class="form-control" id="email" name="email" aria-describedby="Enter email" placeholder="Enter email">
+    <br>
+    <label for="Message">Message: </label>
+    <textarea class="form-control"  name="Message" id="Message" rows="3 " aria-describedby="Enter Message" placeholder="Enter Message"></textarea>
+    
+    <br>
+    <input type="submit" class="btn btn-success" value="Send form">
+</form>
+<hr>
+{% endblock %}
