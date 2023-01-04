@@ -6,12 +6,19 @@
 <hr>
 
 {% block body %} 
+{% for category,message in get_flashed_messages(with_categories=true) %}
+<div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+	{{ message }}
+	<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+
+	{% endfor %}
 <hr>
 <div>
 <h1 style="display: inline">Blog post</h1>
 <a  style="display: inline" class="btn btn-success" href="/post/newpost">+ NEW POST</a>
 </div>
-
+<hr>
 {% for post in posts %}
 
 
@@ -26,6 +33,14 @@
 <br>
 <br>
 <p style="white-space:pre-wrap" >{{ post.content }}</p>
+<br>
+<form action="/post/comment/{{post.id}}" method="POST">
+	
+    <textarea class="form-control"  name="comment" id="comment" rows="3 "aria-describedby="Enter your comment " placeholder="Enter content"></textarea>
+	<input type="submit" class="btn btn-danger" value="comment">   
+</form>
+<hr>
+<a class="btn btn-primary" href="/post/{{post.id}}/comments"> view comment(s)</a>
 
 
 
@@ -35,4 +50,4 @@
 {% endblock %}
 
 
-
+#

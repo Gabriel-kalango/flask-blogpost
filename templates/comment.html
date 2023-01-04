@@ -1,0 +1,33 @@
+{%  extends "base.html" %}
+
+{% block head %}
+<title>post</title>
+    {% endblock %}
+<hr>
+
+{% block body %} 
+<hr>
+
+<br>
+{% for comment  in posts.comment %}
+<hr>
+
+{% if comment.author %}
+<h3> {{comment.author}}</h3> 
+<small> {{comment.date}}</small>
+{% else %}
+<h3>by Unknown</h3> 
+<small>{{comment.date}}</small>
+{% endif %}
+<br>
+<br>
+<p style="white-space:pre-wrap" >{{ comment.content }}</p>
+
+
+
+<hr>
+{% endfor %}
+</div>
+
+
+{% endblock %}
