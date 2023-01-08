@@ -75,7 +75,7 @@ def postcomment(id):
 @login_required
 def postcomments(id):
     posts=BlogPost.query.get(id)
-    if not post:
+    if not posts:
         flash("no comment posted",category="primary")
         return redirect(url_for("blog.post"))   
     return render_template("comment.html",posts=posts)
